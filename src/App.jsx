@@ -20,14 +20,14 @@ function App() {
       <h1>web3 linktree</h1>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Enter a social site link" ref={inputRef}
-          pattern="^(https?://)?([a-z0-9-]+\.)+[a-z]{2,}$"
+          pattern="^(https?:\/\/)?([a-z0-9-]+\.)+[a-z]{2,}(\/.*)?$"
           required />
         <button type="submit">Submit</button>
       </form>
       <ul>
         {links.map((link, index) => (
           <li key={index}>
-            <a href={`https://${link}`} target="_blank" rel="noreferrer">{link}</a>
+            <a href={`${link}`} target="_blank" rel="noreferrer">{link}</a>
           </li>
         ))}
       </ul>
